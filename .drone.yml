@@ -5,3 +5,4 @@ pipeline:
   test:
     image: node:latest
     commands: npm run test
+
