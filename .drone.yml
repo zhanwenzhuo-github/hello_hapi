@@ -35,16 +35,16 @@ steps:
 #   - 'tput setaf 2 ; echo "report will be at: https://testresults.airwallex.com/unit-tests/core_services/${DRONE_REPO_BRANCH//\//-}-${DRONE_BUILD_NUMBER}/" ; tput sgr0 ;'
 #   - exit $ret
 
-- name: build-service
-  image: registry.airwallex.com/java8:build
-  pull: always
-  volumes:
-  - name: gradle-cache
-    path: /gradle-cache
-  - name: root-m2
-    path: /root/.m2
-  commands:
-  - ./gradlew -g /gradle-cache clean build --parallel -x test -Dfile.encoding=UTF8 -v spring-context-indexer:javadoc
+# - name: build-service
+#   image: registry.airwallex.com/java8:build
+#   pull: always
+#   volumes:
+#   - name: gradle-cache
+#     path: /gradle-cache
+#   - name: root-m2
+#     path: /root/.m2
+#   commands:
+#   - ./gradlew -g /gradle-cache clean build --parallel -x test -Dfile.encoding=UTF8 -v spring-context-indexer:javadoc
 
   
 volumes:
